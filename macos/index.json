@@ -1,0 +1,11 @@
+{
+  "name": "Start from a template",
+  "items": [
+    {
+      "name": "default",
+      "url": "default-system.zip",
+      "path": "",
+      "description": "eznix's starting Mac (nix-darwin, stable 26.05): the editor and buttons to rebuild, nothing else. Put your user name where it says YOUR-USER-NAME."
+    }
+  ]
+}
