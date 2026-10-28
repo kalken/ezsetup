@@ -29,4 +29,10 @@ Then choose one under **System ▸ Start from a template**. An import replaces t
 
 Put its zip in the folder and an entry in that folder's `index.json` (`name`, `url`, `path`, `description`).
 
+A good setup works on any CPU, x86_64 or ARM, by taking it from the machine instead of naming it:
+
+- **NixOS**: leave `system` out of `nixosSystem`. `hardware-configuration.nix`, made on the machine by the setup's `generate` step, sets `nixpkgs.hostPlatform`.
+- **Options that exist on one CPU only**: make them a condition, as ezvm does for 32-bit graphics: `"enable32Bit": { "_expr": "pkgs.stdenv.hostPlatform.isx86_64" }`.
+- **Where the CPU has to be named** (standalone home-manager, which has no hardware file): say which in the setup's `description`.
+
 *Part of the ez family: eznix, ezinstall, ezsetup.*
